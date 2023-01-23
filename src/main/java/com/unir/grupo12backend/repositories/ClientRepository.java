@@ -8,6 +8,5 @@ import java.util.ArrayList;
 
 @Repository
 public interface ClientRepository extends CrudRepository<ClientModel, Long> {
-    public abstract ArrayList<ClientModel> findByEmail (String email);
-    public abstract ArrayList<ClientModel> findByFirstName (String firstName);
+
 }

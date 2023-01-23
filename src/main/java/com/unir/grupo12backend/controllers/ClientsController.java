@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/cliente")
@@ -22,4 +23,11 @@ public class ClientsController {
     public ClientModel createClient(@RequestBody ClientModel client){
         return this.clienteService.saveCliente(client);
     }
+
+    @GetMapping(path = "/{id}")
+    public Optional<ClientModel> getClinteByID(@PathVariable("id") Long id) {
+        return this.clienteService.findByID(id);
+    }
+
+
 }
